@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:textSize="30dp"
-        android:text="CRUD for Student using SQLLite"
+        android:textSize="20dp"
+        android:text="CRUD for Android using SQLLite"
         />
 
     <!--  <ScrollView
@@ -38,5 +38,14 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" >
     </ListView>
+
+    <!--<Button
+        android:id="@+id/btnFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feedback"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Button.Colored"/>-->
 
 </RelativeLayout>

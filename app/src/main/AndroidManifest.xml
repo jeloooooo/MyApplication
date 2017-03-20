@@ -21,6 +21,10 @@
             android:name=".DisplayContact"
             android:label="@string/title_activity_display_contact" >
         </activity>
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="FeedbackActivity">
+        </activity>
     </application>
 
 </manifest>

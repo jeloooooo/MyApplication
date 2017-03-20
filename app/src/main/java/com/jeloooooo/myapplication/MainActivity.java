@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE="MESSAGE";
     private ListView objListView;
     DBHelper db;
+
+    private Button mBtLaunchActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*mBtLaunchActivity = (Button) findViewById(R.id.btnFeedback);
+
+        mBtLaunchActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                launchActivity();
+            }
+        });*/
+
     }
 
     @Override
@@ -74,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivityForResult(intent, 0);
                 return true;
+            case R.id.item2:Bundle feedbackDataBundle = new Bundle();
+                feedbackDataBundle.putInt("id", 0);
+
+                Intent feedbackIntent = new Intent(getApplicationContext(),FeedbackActivity.class);
+                feedbackIntent.putExtras(feedbackDataBundle);
+
+                startActivityForResult(feedbackIntent, 0);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -88,5 +110,11 @@ public class MainActivity extends AppCompatActivity {
 
         objListView=(ListView)findViewById(R.id.listView1);
         objListView.setAdapter(arrayAdapter);
+    }
+
+    private void launchActivity() {
+
+        Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivity(intent);
     }
 }
